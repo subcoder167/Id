@@ -29,7 +29,7 @@ function App() {
     //   });
 
     for (let i = 0; i < creds.length; i++) {
-      if (creds[i].id === email && creds[i].password === password) {
+      if (creds[i].id == email && creds[i].password == password) {
         setloggedin(true);
         setuserid("user");
       }
