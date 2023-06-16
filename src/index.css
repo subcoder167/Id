@@ -7,6 +7,7 @@ body {
   /* background: #1C8EF9 !important; */
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
   min-height: 100vh;
   font-family: 'Fira Sans', sans-serif;
 }
