@@ -8,6 +8,7 @@ import axios from 'axios';
 import FormData from 'form-data';
 import { useNavigate } from "react-router-dom";
 
+
 // import SignUp from './components/signup.component'
 function App() {
     const navigate = useNavigate();
@@ -18,21 +19,25 @@ function App() {
 
     const [single, setsingle] = useState(true)
 
-    const [image, setimage] = useState("");
+    const [image, setimage] = useState();
+    const [uploadableimage, uploadablesetimage] = useState();
     const [imagename, setimagename] = useState("Upload image");
 
     const [frontimage, setfrontimage] = useState();
+    const [uploadablefrontimage, uploadablesetfrontimage] = useState();
     const [frontimagename, setfrontimagename] = useState("Upload Front Side");
-    const [backimage, setbackimage] = useState("");
+    const [backimage, setbackimage] = useState();
+    const [uploadablebackimage, uploadablesetbackimage] = useState();
     const [backimagename, setbackimagename] = useState("Upload Back Side");
 
 
     const uploadData = async () => {
         const form = new FormData();
         if (single) {
-            form.append('image', [image]);
+            form.append('image', uploadableimage);
         } else {
-            form.append('image', [frontimage, backimage]);
+            form.append('image', uploadablefrontimage);
+            form.append('image', uploadablebackimage);
         }
 
 
@@ -59,10 +64,17 @@ function App() {
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 alert("image uploaded succefully");
-                
+
                 setimage();
+                setimagename();
                 setfrontimage();
+                setfrontimagename();
                 setbackimage();
+                setbackimagename();
+
+                uploadablesetimage();
+                uploadablesetfrontimage();
+                uploadablesetbackimage();
             })
             .catch((error) => {
                 console.log(error);
@@ -72,8 +84,8 @@ function App() {
     }
 
     return (
-        <div className="App">            
-        <div className='bg-[#005bbc] text-white w-[7rem] h-[3rem] rounded mx-auto py-2.5 cursor-pointer absolute top-[3rem] right-[3rem]' onClick={() => {navigate("/")}}>Logout</div>
+        <div className="App">
+            <div className='bg-[#005bbc] text-white w-[7rem] h-[3rem] rounded mx-auto py-2.5 cursor-pointer absolute top-[3rem] right-[3rem]' onClick={() => {navigate("/")}}>Logout</div>
             <br />
             <br />
             <div className='flex flex-row bg-slate-300 w-[15rem] h-[2rem] mx-auto gap-0 rounded items-center justify-center md:mt-[4rem]'>
@@ -110,6 +122,7 @@ function App() {
 
                             setimage(URL.createObjectURL(e.target.files[0]))
                             setimagename(e.target.files[0].name);
+                            uploadablesetimage(e.target.files[0])
                         }}
                     />
                 </div> : <>
@@ -141,6 +154,7 @@ function App() {
 
                                 setfrontimage(URL.createObjectURL(e.target.files[0]))
                                 setfrontimagename(e.target.files[0].name);
+                                uploadablesetfrontimage(e.target.files[0])
                             }}
                         />
                     </div>
@@ -174,6 +188,7 @@ function App() {
 
                                 setbackimage(URL.createObjectURL(e.target.files[0]))
                                 setbackimagename(e.target.files[0].name);
+                                uploadablesetbackimage(e.target.files[0]);
                             }}
                         />
                     </div>
