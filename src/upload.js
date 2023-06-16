@@ -6,9 +6,11 @@ import Login from './Login'
 import { useState } from 'react'
 import axios from 'axios';
 import FormData from 'form-data';
+import { useNavigate } from "react-router-dom";
 
 // import SignUp from './components/signup.component'
 function App() {
+    const navigate = useNavigate();
 
     const [username, setusername] = useState("")
 
@@ -66,7 +68,8 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className="App">            
+        <div className='bg-[#005bbc] text-white w-[7rem] h-[3rem] rounded mx-auto py-2.5 cursor-pointer absolute top-[3rem] right-[3rem]' onClick={() => {navigate("/")}}>Logout</div>
             <br />
             <br />
             <div className='flex flex-row bg-slate-300 w-[15rem] h-[2rem] mx-auto gap-0 rounded items-center justify-center md:mt-[4rem]'>
