@@ -66,11 +66,11 @@ function App() {
                 alert("image uploaded succefully");
 
                 setimage();
-                setimagename();
+                setimagename("Upload image");
                 setfrontimage();
-                setfrontimagename();
+                setfrontimagename("Upload Front Side");
                 setbackimage();
-                setbackimagename();
+                setbackimagename("Upload Back Side");
 
                 uploadablesetimage();
                 uploadablesetfrontimage();
