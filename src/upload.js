@@ -59,6 +59,10 @@ function App() {
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 alert("image uploaded succefully");
+                
+                setimage();
+                setfrontimage();
+                setbackimage();
             })
             .catch((error) => {
                 console.log(error);
