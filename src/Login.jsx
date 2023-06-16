@@ -54,7 +54,7 @@ function App() {
   }, [loggedin]);
 
   return (
-    <div className="App">
+    <div className="App bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/CKQ62Hm/Whats-App-Image-2023-06-17-at-12-44-30-AM.jpg')] md:bg-[url('https://i.ibb.co/XD5knTj/71-715457-bjp-logo-hd-image-co-1.jpg')]">
       <div className="auth-wrapper">
         <div className="auth-inner">
           <form>
