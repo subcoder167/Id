@@ -7,8 +7,8 @@ function App() {
   const navigate = useNavigate();
 
   const creds = [
-    { id: "subhajit123@gmail.com", password: "subhajit123" },
-    { id: "subhajit456@gmail.com", password: "subhajit456" },
+       { id: "bjpgoa1@admin.com", password: "12345" },
+    { id: "karyakarta1@admin.com", password: "12345" },
   ];
 
   const [email, setemail] = useState("");
