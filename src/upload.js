@@ -84,7 +84,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+         <div className="App bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/f2sdWW2/Whats-App-Image-2023-06-17-at-12-38-16-AM.jpg')] md:bg-[url('https://i.ibb.co/4tvZYFz/Whats-App-Image-2023-06-17-at-12-34-13-AM.jpg')]">
             <div className='bg-[#005bbc] text-white w-[7rem] h-[3rem] rounded mx-auto py-2.5 cursor-pointer absolute top-[6rem] right-[3rem]' onClick={() => {navigate("/")}}>Logout</div>
             <br />
             <br />
