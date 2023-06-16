@@ -28,14 +28,17 @@ function App() {
     //     alert(err);
     //   });
 
+    var flag = 0;
+
     for (let i = 0; i < creds.length; i++) {
       if (creds[i].id === email && creds[i].password === password) {
         setloggedin(true);
         setuserid("user");
+        flag = 1;
       }
     }
 
-    if (!loggedin) {
+    if (flag === 0) {
       alert("invalid user id or password");
     }
 
