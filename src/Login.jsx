@@ -48,7 +48,7 @@ function App() {
     if (loggedin) {
       navigate("/upload");
     }
-  }, [loggedin, navigate]);
+  }, [loggedin]);
 
   return (
     <div className="App">
