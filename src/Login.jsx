@@ -46,7 +46,7 @@ function App() {
       { id: "bjpgoa19@admin.com", password: "12345" },
       { id: "karyakarta19@admin.com", password: "12345" },
       { id: "bjpgoa20@admin.com", password: "12345" },
-      { id: "karyakarta20@admin.com", password: "12345" 
+      { id: "karyakarta20@admin.com", password: "12345" }
   ];
 
   const [email, setemail] = useState("");
